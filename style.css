@@ -1,0 +1,299 @@
+
+body {
+
+    background-color: #ac0600;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+
+}
+
+header {
+
+    text-align: center;
+
+    padding: 30px;
+
+}
+
+header h1 {
+
+    font-size: 40px;
+
+    margin: 0 0 10px 0;
+
+    color: #f7f8f7;
+
+}
+
+header p {
+
+    color: #b8c1ec;
+
+    font-size: 18px;
+
+}
+
+nav {
+
+    background-color: #111c3a;
+
+    padding: 18px;
+
+    text-align: center;
+
+}
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    margin: 0 15px;
+
+    font-weight: bold;
+
+}
+
+nav a:hover {
+
+    color: #1000eb;
+
+}
+
+main {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 40px 20px;
+
+}
+
+section {
+
+    text-align: center;
+
+}
+
+section h2 {
+
+    font-size: 32px;
+
+    color: #e9e9e9;
+
+}
+
+section p {
+
+    color: #c9c9c9;
+
+    font-size: 18px;
+
+}
+
+.ligas {
+
+    text-align: center;
+
+    padding: 30px 0;
+
+}
+
+.ligas h2 {
+
+    color: #00ff88;
+
+    font-size: 32px;
+
+}
+
+.ligas > p {
+
+    color: #c9c9c9;
+
+    font-size: 18px;
+
+}
+
+.contenedor-ligas {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 35px;
+
+}
+
+.tarjeta-liga {
+
+    background-color: #111c3a;
+
+    border-radius: 12px;
+
+    padding: 30px 20px;
+
+    transition: transform 0.3s, background-color 0.3s;
+
+    min-height: 260px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.tarjeta-liga:hover {
+
+    transform: translateY(-8px);
+
+    background-color: #172653;
+
+}
+
+.tarjeta-liga img {
+
+    width: 140px;
+
+    height: 140px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto 20px auto;
+
+    border-radius: 10px;
+
+}
+
+.tarjeta-liga h3 {
+
+    font-size: 22px;
+
+    margin: 10px 0;
+
+    color: white;
+
+}
+
+.tarjeta-liga p {
+
+    color: #b8c1ec;
+
+    margin: 0;
+
+}
+
+/* ==========================================
+   ETAPA 2 - EQUIPOS DE LA LIGA
+   ========================================== */
+
+#seccion-equipos {
+    margin-top: 50px;
+}
+
+#seccion-equipos h2 {
+    color: #00ff88;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+
+/* CONTENEDOR DE EQUIPOS */
+
+#equipos-liga {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+
+/* TARJETA DE CADA EQUIPO */
+
+.tarjeta-equipo {
+    background-color: #111c3a;
+    border-radius: 12px;
+    padding: 25px 15px;
+
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.tarjeta-equipo:hover {
+    transform: translateY(-6px);
+    background-color: #172653;
+}
+
+
+/* NÚMERO DEL EQUIPO */
+
+.numero-equipo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00ff88;
+    margin-bottom: 8px;
+}
+
+
+/* NOMBRE DEL EQUIPO */
+
+.tarjeta-equipo h3 {
+    color: white;
+    font-size: 19px;
+    margin: 8px 0;
+}
+
+
+/* PAÍS */
+
+.tarjeta-equipo p {
+    color: #b8c1ec;
+    font-size: 15px;
+    margin: 0;
+}
+
+
+/* ==========================================
+   ADAPTACIÓN PARA PANTALLAS PEQUEÑAS
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    #equipos-liga {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #equipos-liga {
+        grid-template-columns: 1fr;
+    }
+
+}
+
