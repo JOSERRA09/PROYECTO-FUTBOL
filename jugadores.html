@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugadores - Proyecto Futbol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO PRINCIPAL -->
+    <header>
+        <h1>PROYECTO FUTBOL</h1>
+        <p>
+            ESTADISTICAS DEL FUTBOL EUROPEO
+        </p>
+    </header>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="ligas.html">Ligas</a>
+        <a href="jugadores.html">Jugadores</a>
+        <a href="estadisticas.html">Estadísticas</a>
+        <a href="europa.html">Competiciones Europeas</a>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <section class="jugadores">
+
+            <h2>JUGADORES</h2>
+
+            <p>
+                Consulta información y estadísticas de los principales
+                jugadores del fútbol europeo.
+            </p>
+
+            <!-- FILTRO DE LIGA -->
+            <div class="filtro-jugadores">
+
+                <label for="liga-jugadores">
+                    Selecciona una liga:
+                </label>
+
+                <select id="liga-jugadores">
+
+                    <option value="todas">
+                        Todas las ligas
+                    </option>
+
+                    <option value="premier">
+                        Premier League
+                    </option>
+
+                    <option value="laliga">
+                        LaLiga
+                    </option>
+
+                    <option value="seriea">
+                        Serie A
+                    </option>
+
+                    <option value="bundesliga">
+                        Bundesliga
+                    </option>
+
+                    <option value="ligue1">
+                        Ligue 1
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- CONTENEDOR DE JUGADORES -->
+            <div id="contenedor-jugadores">
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -297,3 +297,102 @@ section p {
 
 }
 
+/* ==========================================
+   ETAPA 3 - JUGADORES
+   ========================================== */
+
+.jugadores {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.jugadores h2 {
+    color: #00ff88;
+    font-size: 32px;
+}
+
+.jugadores > p {
+    color: #c9c9c9;
+    font-size: 18px;
+}
+
+/* FILTRO */
+
+.filtro-jugadores {
+    margin: 35px 0;
+}
+
+.filtro-jugadores label {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.filtro-jugadores select {
+    background-color: #111c3a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* CONTENEDOR */
+
+#contenedor-jugadores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* TARJETA */
+
+.tarjeta-jugador {
+    background-color: #111c3a;
+    border-radius: 12px;
+    padding: 25px 20px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.tarjeta-jugador:hover {
+    transform: translateY(-6px);
+    background-color: #172653;
+}
+
+.tarjeta-jugador h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-jugador p {
+    color: #b8c1ec;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.estadistica-jugador {
+    color: #00ff88 !important;
+    font-weight: bold;
+}
+
+/* ADAPTACIÓN A PANTALLAS PEQUEÑAS */
+
+@media (max-width: 900px) {
+
+    #contenedor-jugadores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    #contenedor-jugadores {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -338,3 +338,172 @@ if (liga && ligas[liga]) {
 
 }
 
+// ==========================================
+// ETAPA 3 - JUGADORES
+// ==========================================
+
+const selectorLigaJugadores =
+    document.getElementById("liga-jugadores");
+
+const contenedorJugadores =
+    document.getElementById("contenedor-jugadores");
+
+// ==========================================
+// INFORMACIÓN DE JUGADORES
+// ==========================================
+
+const jugadores = [
+
+    {
+        nombre: "Mohamed Salah",
+        equipo: "Liverpool",
+        liga: "premier",
+        pais: "Egipto",
+        posicion: "Delantero",
+        goles: 0,
+        asistencias: 0,
+        titulos: 0
+    },
+
+    {
+        nombre: "Erling Haaland",
+        equipo: "Manchester City",
+        liga: "premier",
+        pais: "Noruega",
+        posicion: "Delantero",
+        goles: 0,
+        asistencias: 0,
+        titulos: 0
+    },
+
+    {
+        nombre: "Lamine Yamal",
+        equipo: "Barcelona",
+        liga: "laliga",
+        pais: "España",
+        posicion: "Extremo",
+        goles: 0,
+        asistencias: 0,
+        titulos: 0
+    },
+
+    {
+        nombre: "Kylian Mbappé",
+        equipo: "Real Madrid",
+        liga: "laliga",
+        pais: "Francia",
+        posicion: "Delantero",
+        goles: 0,
+        asistencias: 0,
+        titulos: 0
+    },
+
+    {
+        nombre: "Lautaro Martínez",
+        equipo: "Inter de Milán",
+        liga: "seriea",
+        pais: "Argentina",
+        posicion: "Delantero",
+        goles: 0,
+        asistencias: 0,
+        titulos: 0
+    },
+
+    {
+        nombre: "Harry Kane",
+        equipo: "Bayern Múnich",
+        liga: "bundesliga",
+        pais: "Inglaterra",
+        posicion: "Delantero",
+        goles: 0,
+        asistencias: 0,
+        titulos: 0
+    },
+
+    {
+        nombre: "Ousmane Dembélé",
+        equipo: "Paris Saint-Germain",
+        liga: "ligue1",
+        pais: "Francia",
+        posicion: "Delantero",
+        goles: 0,
+        asistencias: 0,
+        titulos: 0
+    }
+
+];
+
+// ==========================================
+// MOSTRAR JUGADORES
+// ==========================================
+
+function mostrarJugadores(ligaSeleccionada) {
+
+    contenedorJugadores.innerHTML = "";
+
+    const jugadoresFiltrados =
+        ligaSeleccionada === "todas"
+            ? jugadores
+            : jugadores.filter(function(jugador) {
+                return jugador.liga === ligaSeleccionada;
+            });
+
+    jugadoresFiltrados.forEach(function(jugador) {
+
+        contenedorJugadores.innerHTML += `
+
+            <div class="tarjeta-jugador">
+
+                <h3>
+                    ${jugador.nombre}
+                </h3>
+
+                <p>
+                    Equipo: ${jugador.equipo}
+                </p>
+
+                <p>
+                    País: ${jugador.pais}
+                </p>
+
+                <p>
+                    Posición: ${jugador.posicion}
+                </p>
+
+                <p class="estadistica-jugador">
+                    Goles: ${jugador.goles}
+                </p>
+
+                <p class="estadistica-jugador">
+                    Asistencias: ${jugador.asistencias}
+                </p>
+
+                <p class="estadistica-jugador">
+                    Títulos: ${jugador.titulos}
+                </p>
+
+            </div>
+
+        `;
+    });
+}
+
+// ==========================================
+// CAMBIO DE LIGA
+// ==========================================
+
+if (selectorLigaJugadores) {
+
+    selectorLigaJugadores.addEventListener(
+        "change",
+        function() {
+
+            mostrarJugadores(
+                selectorLigaJugadores.value
+            );
+
+        }
+    );
+
+    mostrarJugadores("todas");
+}
