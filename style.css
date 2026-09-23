@@ -499,3 +499,74 @@ section p {
     }
 
 }
+/* ==========================================
+ETAPA 5 - COMPETICIONES EUROPEAS
+========================================== */
+
+.europa {
+text-align: center;
+padding: 30px 0;
+}
+
+.europa h2 {
+color: #00ff88;
+font-size: 32px;
+}
+
+.europa > p {
+color: #c9c9c9;
+font-size: 18px;
+}
+
+/* CONTENEDOR */
+
+#contenedor-competiciones {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+margin-top: 35px;
+}
+
+/* TARJETAS */
+
+.tarjeta-competicion {
+background-color: #111c3a;
+border-radius: 12px;
+padding: 30px 20px;
+min-height: 220px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+transition: transform 0.3s, background-color 0.3s;
+}
+
+.tarjeta-competicion:hover {
+transform: translateY(-8px);
+background-color: #172653;
+}
+
+.tarjeta-competicion h3 {
+color: white;
+font-size: 23px;
+margin-bottom: 18px;
+}
+
+.tarjeta-competicion p {
+color: #b8c1ec;
+font-size: 16px;
+margin: 8px 0;
+line-height: 1.5;
+}
+
+.tarjeta-competicion .formato-competicion {
+color: #00ff88;
+font-weight: bold;
+}
+
+/* PANTALLAS PEQUEÑAS */
+
+@media (max-width: 900px) {
+#contenedor-competiciones {
+grid-template-columns: 1fr;
+}
+}

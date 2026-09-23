@@ -663,6 +663,7 @@ const competiciones = [
     nombre: "UEFA Champions League",
     temporada: "2025-2026",
     equipos: 36,
+    logo: "LOGOS/LOGO UCL.png",
     descripcion:
         "Principal competición europea de clubes organizada por la UEFA.",
     formato:
@@ -673,6 +674,7 @@ const competiciones = [
     nombre: "UEFA Europa League",
     temporada: "2025-2026",
     equipos: 36,
+    logo: "LOGOS/LOGO UEL.jpg",
     descripcion:
         "Competición europea de clubes que reúne equipos de diferentes ligas nacionales.",
     formato:
@@ -683,6 +685,7 @@ const competiciones = [
     nombre: "UEFA Conference League",
     temporada: "2025-2026",
     equipos: 36,
+    logo: "LOGOS/LOGO CL.png",
     descripcion:
         "Competición europea de clubes que ofrece participación internacional a equipos de distintas ligas.",
     formato:
