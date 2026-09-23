@@ -646,3 +646,100 @@ if (ligaEstadisticas && ordenEstadisticas) {
 
     mostrarEstadisticas();
 }
+// ==========================================
+// ETAPA 5 - COMPETICIONES EUROPEAS
+// ==========================================
+
+const contenedorCompeticiones =
+document.getElementById("contenedor-competiciones");
+
+// ==========================================
+// INFORMACIÓN DE COMPETICIONES
+// ==========================================
+
+const competiciones = [
+
+{
+    nombre: "UEFA Champions League",
+    temporada: "2025-2026",
+    equipos: 36,
+    descripcion:
+        "Principal competición europea de clubes organizada por la UEFA.",
+    formato:
+        "Fase liga y eliminatorias."
+},
+
+{
+    nombre: "UEFA Europa League",
+    temporada: "2025-2026",
+    equipos: 36,
+    descripcion:
+        "Competición europea de clubes que reúne equipos de diferentes ligas nacionales.",
+    formato:
+        "Fase liga y eliminatorias."
+},
+
+{
+    nombre: "UEFA Conference League",
+    temporada: "2025-2026",
+    equipos: 36,
+    descripcion:
+        "Competición europea de clubes que ofrece participación internacional a equipos de distintas ligas.",
+    formato:
+        "Fase liga y eliminatorias."
+}
+
+];
+
+// ==========================================
+// MOSTRAR COMPETICIONES
+// ==========================================
+
+function mostrarCompeticiones() {
+
+if (!contenedorCompeticiones) {
+    return;
+}
+
+contenedorCompeticiones.innerHTML = "";
+
+competiciones.forEach(function(competicion) {
+
+    contenedorCompeticiones.innerHTML += `
+
+        <div class="tarjeta-competicion">
+
+            <h3>
+                ${competicion.nombre}
+            </h3>
+
+            <p>
+                Temporada: ${competicion.temporada}
+            </p>
+
+            <p>
+                Número de equipos: ${competicion.equipos}
+            </p>
+
+            <p>
+                ${competicion.descripcion}
+            </p>
+
+            <p class="formato-competicion">
+                Formato: ${competicion.formato}
+            </p>
+
+        </div>
+
+    `;
+});
+
+}
+
+// ==========================================
+// INICIAR COMPETICIONES
+// ==========================================
+
+if (contenedorCompeticiones) {
+mostrarCompeticiones();
+}
