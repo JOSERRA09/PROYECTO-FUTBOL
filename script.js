@@ -507,3 +507,142 @@ if (selectorLigaJugadores) {
 
     mostrarJugadores("todas");
 }
+// ==========================================
+// ETAPA 4 - ESTADISTICAS
+// ==========================================
+
+const ligaEstadisticas =
+    document.getElementById("liga-estadisticas");
+
+const ordenEstadisticas =
+    document.getElementById("orden-estadisticas");
+
+const tablaJugadores =
+    document.getElementById("tabla-jugadores");
+
+// ==========================================
+// MOSTRAR ESTADISTICAS
+// ==========================================
+
+function mostrarEstadisticas() {
+
+    if (!tablaJugadores) {
+        return;
+    }
+
+    const ligaSeleccionada =
+        ligaEstadisticas.value;
+
+    const tipoOrden =
+        ordenEstadisticas.value;
+
+    let jugadoresFiltrados =
+        ligaSeleccionada === "todas"
+            ? jugadores
+            : jugadores.filter(function(jugador) {
+                return jugador.liga === ligaSeleccionada;
+            });
+
+    // ======================================
+    // ORDENAR
+    // ======================================
+
+    jugadoresFiltrados.sort(function(a, b) {
+
+        return b[tipoOrden] - a[tipoOrden];
+
+    });
+
+    // ======================================
+    // LIMPIAR TABLA
+    // ======================================
+
+    tablaJugadores.innerHTML = "";
+
+    // ======================================
+    // CREAR FILAS
+    // ======================================
+
+    jugadoresFiltrados.forEach(function(jugador, indice) {
+
+        let nombreLiga = "";
+
+        switch (jugador.liga) {
+
+            case "premier":
+                nombreLiga = "Premier League";
+                break;
+
+            case "laliga":
+                nombreLiga = "LaLiga";
+                break;
+
+            case "seriea":
+                nombreLiga = "Serie A";
+                break;
+
+            case "bundesliga":
+                nombreLiga = "Bundesliga";
+                break;
+
+            case "ligue1":
+                nombreLiga = "Ligue 1";
+                break;
+        }
+
+        tablaJugadores.innerHTML += `
+
+            <tr>
+
+                <td>
+                    ${indice + 1}
+                </td>
+
+                <td>
+                    ${jugador.nombre}
+                </td>
+
+                <td>
+                    ${jugador.equipo}
+                </td>
+
+                <td>
+                    ${nombreLiga}
+                </td>
+
+                <td>
+                    ${jugador.goles}
+                </td>
+
+                <td>
+                    ${jugador.asistencias}
+                </td>
+
+                <td>
+                    ${jugador.titulos}
+                </td>
+
+            </tr>
+
+        `;
+    });
+}
+
+// ==========================================
+// EVENTOS DE LOS FILTROS
+// ==========================================
+
+if (ligaEstadisticas && ordenEstadisticas) {
+
+    ligaEstadisticas.addEventListener(
+        "change",
+        mostrarEstadisticas
+    );
+
+    ordenEstadisticas.addEventListener(
+        "change",
+        mostrarEstadisticas
+    );
+
+    mostrarEstadisticas();
+}

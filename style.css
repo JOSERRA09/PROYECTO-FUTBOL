@@ -396,3 +396,106 @@ section p {
     }
 
 }
+/* ==========================================
+   ETAPA 4 - ESTADISTICAS
+   ========================================== */
+
+.estadisticas {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.estadisticas h2 {
+    color: #00ff88;
+    font-size: 32px;
+}
+
+.estadisticas > p {
+    color: #c9c9c9;
+    font-size: 18px;
+}
+
+/* FILTROS */
+
+.filtros-estadisticas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 35px 0;
+    flex-wrap: wrap;
+}
+
+.filtros-estadisticas label {
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.filtros-estadisticas select {
+    background-color: #111c3a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* TABLA */
+
+.tabla-estadisticas {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 30px;
+}
+
+.tabla-estadisticas table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #111c3a;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tabla-estadisticas th {
+    background-color: #172653;
+    color: #00ff88;
+    padding: 15px 10px;
+    font-size: 16px;
+}
+
+.tabla-estadisticas td {
+    color: white;
+    padding: 14px 10px;
+    border-bottom: 1px solid #29375f;
+}
+
+.tabla-estadisticas tr:hover {
+    background-color: #172653;
+}
+
+.tabla-estadisticas td:nth-child(5),
+.tabla-estadisticas td:nth-child(6),
+.tabla-estadisticas td:nth-child(7) {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+/* PANTALLAS PEQUEÑAS */
+
+@media (max-width: 700px) {
+
+    .filtros-estadisticas {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .tabla-estadisticas th,
+    .tabla-estadisticas td {
+        font-size: 14px;
+        padding: 10px 6px;
+    }
+
+}
