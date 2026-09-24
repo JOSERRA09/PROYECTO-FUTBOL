@@ -1,78 +1,105 @@
+/* ==========================================
+   PROYECTO FUTBOL - DISEÑO GENERAL
+   ========================================== */
 
-body {
-
-    background-color: #ac0600;
-
-    color: white;
-
-    font-family: Arial, sans-serif;
-
-    margin: 0;
-
+* {
+    box-sizing: border-box;
 }
 
+body {
+    background:
+        radial-gradient(circle at top, #182b4d 0%, #080d18 45%, #050810 100%);
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   ENCABEZADO
+   ========================================== */
+
 header {
-
     text-align: center;
-
-    padding: 30px;
-
+    padding: 45px 20px 35px 20px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(17, 28, 58, 0.95),
+            rgba(8, 13, 24, 0.85)
+        );
+    border-bottom: 1px solid rgba(0, 255, 136, 0.18);
 }
 
 header h1 {
-
-    font-size: 40px;
-
-    margin: 0 0 10px 0;
-
-    color: #f7f8f7;
-
+    font-size: 46px;
+    margin: 0 0 12px 0;
+    color: white;
+    letter-spacing: 3px;
+    text-shadow: 0 0 18px rgba(0, 255, 136, 0.25);
 }
 
 header p {
-
     color: #b8c1ec;
-
     font-size: 18px;
-
+    margin: 0;
+    letter-spacing: 2px;
 }
 
+/* ==========================================
+   BARRA DE NAVEGACIÓN
+   ========================================== */
+
 nav {
-
-    background-color: #111c3a;
-
-    padding: 18px;
-
+    background: rgba(8, 13, 24, 0.96);
+    padding: 18px 20px;
     text-align: center;
-
+    border-bottom: 1px solid rgba(0, 255, 136, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
 }
 
 nav a {
+    display: inline-block;
 
-    color: white;
+    color: #e8ecf7;
 
     text-decoration: none;
 
-    margin: 0 15px;
+    margin: 3px 5px;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
 
     font-weight: bold;
 
+    font-size: 15px;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.3s ease;
 }
 
 nav a:hover {
+    color: #00ff88;
 
-    color: #1000eb;
+    background-color: rgba(0, 255, 136, 0.08);
 
+    transform: translateY(-2px);
 }
 
+/* ==========================================
+   CONTENIDO PRINCIPAL
+   ========================================== */
+
 main {
-
     max-width: 1200px;
-
     margin: auto;
-
-    padding: 40px 20px;
-
+    padding: 50px 20px;
 }
 
 section {
@@ -80,21 +107,51 @@ section {
     text-align: center;
 
 }
+/* ==========================================
+   TÍTULOS DE SECCIONES
+   ========================================== */
 
 section h2 {
+    position: relative;
+
+    display: inline-block;
 
     font-size: 32px;
 
-    color: #e9e9e9;
+    color: white;
 
+    margin: 0 0 18px 0;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 15px rgba(0, 255, 136, 0.12);
 }
 
-section p {
+/* LÍNEA DECORATIVA */
 
-    color: #c9c9c9;
+section h2::after {
+    content: "";
 
-    font-size: 18px;
+    display: block;
 
+    width: 60%;
+
+    height: 3px;
+
+    margin: 10px auto 0 auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00ff88,
+            transparent
+        );
+
+    border-radius: 10px;
 }
 
 .ligas {
@@ -133,42 +190,57 @@ section p {
 
 }
 
+/* ==========================================
+   TARJETAS DE LAS 5 GRANDES LIGAS
+   ========================================== */
+
 .tarjeta-liga {
-
-    background-color: #111c3a;
-
-    border-radius: 12px;
-
+    background:
+        linear-gradient(
+            145deg,
+            #111c3a,
+            #0b1328
+        );
+    border: 1px solid rgba(0, 255, 136, 0.12);
+    border-radius: 16px;
     padding: 30px 20px;
-
-    transition: transform 0.3s, background-color 0.3s;
-
     min-height: 260px;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
 
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.30);
 }
 
 .tarjeta-liga:hover {
+    transform: translateY(-10px);
 
-    transform: translateY(-8px);
+    background:
+        linear-gradient(
+            145deg,
+            #172653,
+            #0d1933
+        );
 
-    background-color: #172653;
+    border-color: rgba(0, 255, 136, 0.45);
 
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.50),
+        0 0 20px rgba(0, 255, 136, 0.08);
 }
 
 .tarjeta-liga img {
-
     width: 140px;
-
     height: 140px;
-
     object-fit: contain;
 
     display: block;
@@ -177,24 +249,29 @@ section p {
 
     border-radius: 10px;
 
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.tarjeta-liga:hover img {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.18));
 }
 
 .tarjeta-liga h3 {
-
     font-size: 22px;
-
     margin: 10px 0;
 
     color: white;
 
+    letter-spacing: 0.5px;
 }
 
 .tarjeta-liga p {
-
     color: #b8c1ec;
-
     margin: 0;
-
+    font-size: 16px;
 }
 
 /* ==========================================
@@ -224,57 +301,81 @@ section p {
 
 /* TARJETA DE CADA EQUIPO */
 
-.tarjeta-equipo {
-    background-color: #111c3a;
-    border-radius: 12px;
-    padding: 25px 15px;
+/* ==========================================
+   TARJETAS DE EQUIPOS
+   ========================================== */
 
-    min-height: 120px;
+.tarjeta-equipo {
+    background:
+        linear-gradient(
+            145deg,
+            #111c3a,
+            #0b1328
+        );
+
+    border: 1px solid rgba(0, 255, 136, 0.10);
+    border-radius: 14px;
+
+    padding: 25px 15px;
+    min-height: 140px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    transition: transform 0.3s, background-color 0.3s;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
 }
-
-
-/* EFECTO AL PASAR EL MOUSE */
 
 .tarjeta-equipo:hover {
-    transform: translateY(-6px);
-    background-color: #172653;
+    transform: translateY(-7px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #172653,
+            #0d1933
+        );
+
+    border-color: rgba(0, 255, 136, 0.35);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.45),
+        0 0 15px rgba(0, 255, 136, 0.07);
 }
-
-
-/* NÚMERO DEL EQUIPO */
 
 .numero-equipo {
     font-size: 18px;
     font-weight: bold;
+
     color: #00ff88;
+
     margin-bottom: 8px;
 }
-
-
-/* NOMBRE DEL EQUIPO */
 
 .tarjeta-equipo h3 {
     color: white;
     font-size: 19px;
+
     margin: 8px 0;
+
+    letter-spacing: 0.3px;
 }
-
-
-/* PAÍS */
 
 .tarjeta-equipo p {
     color: #b8c1ec;
+
     font-size: 15px;
+
     margin: 0;
 }
-
 
 /* ==========================================
    ADAPTACIÓN PARA PANTALLAS PEQUEÑAS
@@ -350,35 +451,77 @@ section p {
 
 /* TARJETA */
 
+/* ==========================================
+   TARJETAS DE JUGADORES
+   ========================================== */
+
 .tarjeta-jugador {
-    background-color: #111c3a;
-    border-radius: 12px;
+    background:
+        linear-gradient(
+            145deg,
+            #111c3a,
+            #0b1328
+        );
+
+    border: 1px solid rgba(0, 255, 136, 0.10);
+    border-radius: 16px;
+
     padding: 25px 20px;
-    transition: transform 0.3s, background-color 0.3s;
+
+    min-height: 190px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.28);
 }
 
 .tarjeta-jugador:hover {
-    transform: translateY(-6px);
-    background-color: #172653;
+    transform: translateY(-8px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #172653,
+            #0d1933
+        );
+
+    border-color: rgba(0, 255, 136, 0.40);
+
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.45),
+        0 0 18px rgba(0, 255, 136, 0.08);
 }
 
 .tarjeta-jugador h3 {
     color: white;
+
     font-size: 22px;
+
     margin-bottom: 15px;
+
+    letter-spacing: 0.5px;
 }
 
 .tarjeta-jugador p {
     color: #b8c1ec;
+
     font-size: 16px;
+
     margin: 8px 0;
 }
 
 .estadistica-jugador {
     color: #00ff88 !important;
-    font-weight: bold;
-}
 
+    font-weight: bold;
+
+    font-size: 17px;
+}
 /* ADAPTACIÓN A PANTALLAS PEQUEÑAS */
 
 @media (max-width: 900px) {
@@ -445,42 +588,93 @@ section p {
 
 /* TABLA */
 
+/* ==========================================
+   TABLA DE ESTADÍSTICAS
+   ========================================== */
+
 .tabla-estadisticas {
     width: 100%;
     overflow-x: auto;
     margin-top: 30px;
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .tabla-estadisticas table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #111c3a;
-    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111c3a,
+            #0b1328
+        );
+
+    border-radius: 14px;
     overflow: hidden;
+
+    border: 1px solid rgba(0, 255, 136, 0.12);
 }
+
+/* ENCABEZADOS */
 
 .tabla-estadisticas th {
-    background-color: #172653;
+    background:
+        linear-gradient(
+            135deg,
+            #172653,
+            #111c3a
+        );
+
     color: #00ff88;
-    padding: 15px 10px;
+
+    padding: 17px 12px;
+
     font-size: 16px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    border-bottom: 2px solid rgba(0, 255, 136, 0.25);
 }
+
+/* DATOS */
 
 .tabla-estadisticas td {
-    color: white;
-    padding: 14px 10px;
-    border-bottom: 1px solid #29375f;
+    color: #f1f3f8;
+
+    padding: 15px 12px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    font-size: 15px;
 }
 
-.tabla-estadisticas tr:hover {
-    background-color: #172653;
+/* FILAS */
+
+.tabla-estadisticas tbody tr {
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
 }
+
+.tabla-estadisticas tbody tr:hover {
+    background-color: rgba(0, 255, 136, 0.06);
+}
+
+/* ESTADÍSTICAS IMPORTANTES */
 
 .tabla-estadisticas td:nth-child(5),
 .tabla-estadisticas td:nth-child(6),
 .tabla-estadisticas td:nth-child(7) {
     color: #00ff88;
+
     font-weight: bold;
+
+    font-size: 16px;
 }
 
 /* PANTALLAS PEQUEÑAS */
@@ -528,49 +722,118 @@ margin-top: 35px;
 }
 
 /* TARJETAS */
+/* ==========================================
+   TARJETAS DE COMPETICIONES EUROPEAS
+   ========================================== */
 
 .tarjeta-competicion {
-    background-color: #111c3a;
-    border-radius: 12px;
-    padding: 20px 15px;
-    min-height: 180px;
+    background:
+        linear-gradient(
+            145deg,
+            #111c3a,
+            #0b1328
+        );
+
+    border: 1px solid rgba(0, 255, 136, 0.12);
+    border-radius: 16px;
+
+    padding: 25px 20px;
+
+    min-height: 300px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s, background-color 0.3s;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.30);
 }
 
 .tarjeta-competicion:hover {
-    transform: translateY(-8px);
-    background-color: #172653;
+    transform: translateY(-10px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #172653,
+            #0d1933
+        );
+
+    border-color: rgba(0, 255, 136, 0.45);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.50),
+        0 0 20px rgba(0, 255, 136, 0.08);
 }
 
+/* LOGOS */
+
 .tarjeta-competicion img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
+
     object-fit: contain;
+
     display: block;
-    margin: 0 auto 12px auto;
-    border-radius: 8px;
+
+    margin: 0 auto 15px auto;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
 }
+
+.tarjeta-competicion:hover img {
+    transform: scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(255, 255, 255, 0.20)
+        );
+}
+
+/* TÍTULO */
 
 .tarjeta-competicion h3 {
     color: white;
+
     font-size: 21px;
+
     margin: 8px 0 12px 0;
+
+    letter-spacing: 0.4px;
 }
+
+/* INFORMACIÓN */
 
 .tarjeta-competicion p {
     color: #b8c1ec;
+
     font-size: 15px;
+
     margin: 5px 0;
-    line-height: 1.4;
+
+    line-height: 1.5;
 }
+
+/* FORMATO */
 
 .tarjeta-competicion .formato-competicion {
     color: #00ff88;
+
     font-weight: bold;
+
+    margin-top: 12px;
 }
 
 /* PANTALLAS PEQUEÑAS */
@@ -579,4 +842,509 @@ margin-top: 35px;
 #contenedor-competiciones {
 grid-template-columns: 1fr;
 }
+}
+
+/* ==========================================
+ETAPA 6 - ACCESOS PRINCIPALES
+========================================== */
+
+.accesos-principales {
+text-align: center;
+padding: 50px 0 30px 0;
+}
+
+.accesos-principales h2 {
+color: #00ff88;
+font-size: 32px;
+margin-bottom: 15px;
+}
+
+.accesos-principales > p {
+color: #c9c9c9;
+font-size: 18px;
+margin-bottom: 35px;
+}
+
+/* CONTENEDOR */
+
+.contenedor-accesos {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 25px;
+margin-top: 35px;
+}
+
+/* TARJETAS EXPLORA EL FUTBOL EUROPEO */
+
+.accesos-principales {
+    text-align: center;
+    padding: 50px 0 30px 0;
+}
+
+.accesos-principales h2 {
+    color: #00ff88;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.accesos-principales > p {
+    color: #c9c9c9;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+/* CONTENEDOR */
+
+.contenedor-accesos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+/* TARJETAS IGUALES A LAS TARJETAS DE LAS LIGAS */
+
+/* ==========================================
+   TARJETAS DE ACCESO PRINCIPAL
+   ========================================== */
+
+.tarjeta-acceso {
+    background:
+        linear-gradient(
+            145deg,
+            #111c3a,
+            #0b1328
+        );
+
+    border: 1px solid rgba(0, 255, 136, 0.12);
+    border-radius: 16px;
+
+    padding: 30px 20px;
+
+    min-height: 190px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.30);
+}
+
+.tarjeta-acceso:hover {
+    transform: translateY(-10px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #172653,
+            #0d1933
+        );
+
+    border-color: rgba(0, 255, 136, 0.45);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.50),
+        0 0 20px rgba(0, 255, 136, 0.08);
+}
+
+/* TÍTULO */
+
+.tarjeta-acceso h3 {
+    color: white;
+
+    font-size: 22px;
+
+    margin: 10px 0 15px 0;
+
+    letter-spacing: 0.5px;
+}
+
+/* DESCRIPCIÓN */
+
+.tarjeta-acceso p {
+    color: #b8c1ec;
+
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+/* PANTALLAS MEDIANAS */
+
+@media (max-width: 1000px) {
+    .contenedor-accesos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================
+   NAVEGACIÓN EN CELULARES
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 12px 10px;
+    }
+
+    nav a {
+        margin: 3px 2px;
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+/* ==========================================
+   PORTADA - HERO PRINCIPAL
+   ========================================== */
+
+.hero {
+    position: relative;
+
+    min-height: 420px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    margin-bottom: 40px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(17, 28, 58, 0.98),
+            rgba(5, 8, 16, 0.98)
+        );
+
+    border: 1px solid rgba(0, 255, 136, 0.18);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.40);
+}
+
+/* EFECTO DE LUZ */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 255, 136, 0.12),
+            transparent 70%
+        );
+
+    top: -250px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+}
+
+/* CONTENIDO */
+
+.hero h2 {
+    position: relative;
+
+    color: white;
+
+    font-size: 48px;
+
+    margin: 0 0 15px 0;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 20px rgba(0, 255, 136, 0.20);
+}
+
+.hero p {
+    position: relative;
+
+    color: #b8c1ec;
+
+    font-size: 20px;
+
+    max-width: 700px;
+
+    line-height: 1.6;
+
+    margin: 0 0 30px 0;
+}
+
+/* BOTONES */
+
+.hero-botones {
+    position: relative;
+
+    display: flex;
+
+    gap: 18px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+
+.hero-boton {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.hero-boton-principal {
+    background-color: #00ff88;
+
+    color: #06120d;
+}
+
+.hero-boton-principal:hover {
+    transform: translateY(-4px);
+
+    background-color: #35ffa6;
+
+    box-shadow:
+        0 8px 20px rgba(0, 255, 136, 0.25);
+}
+
+.hero-boton-secundario {
+    background-color: transparent;
+
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.hero-boton-secundario:hover {
+    transform: translateY(-4px);
+
+    border-color: #00ff88;
+
+    color: #00ff88;
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 360px;
+
+        padding: 50px 20px;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .hero-botones {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .hero-boton {
+        width: 100%;
+    }
+}
+/* ==========================================
+   LIGAS EN CELULARES
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .contenedor-ligas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tarjeta-liga {
+        min-height: 230px;
+        padding: 25px 15px;
+    }
+
+    .tarjeta-liga img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .tarjeta-liga h3 {
+        font-size: 20px;
+    }
+}
+/* ==========================================
+   EQUIPOS EN CELULARES
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    #equipos-liga {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .tarjeta-equipo {
+        min-height: 120px;
+        padding: 20px 15px;
+    }
+
+    .tarjeta-equipo h3 {
+        font-size: 18px;
+    }
+
+}
+/* ==========================================
+   JUGADORES EN CELULARES
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    #contenedor-jugadores {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tarjeta-jugador {
+        min-height: 170px;
+        padding: 22px 18px;
+    }
+
+    .tarjeta-jugador h3 {
+        font-size: 20px;
+    }
+
+    .tarjeta-jugador p {
+        font-size: 15px;
+    }
+
+}
+/* ==========================================
+   ESTADÍSTICAS EN CELULARES
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .filtros-estadisticas {
+        flex-direction: column;
+        gap: 15px;
+        margin: 25px 0;
+    }
+
+    .filtros-estadisticas select {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .tabla-estadisticas {
+        margin-top: 20px;
+        overflow-x: auto;
+    }
+
+    .tabla-estadisticas table {
+        min-width: 700px;
+    }
+
+    .tabla-estadisticas th,
+    .tabla-estadisticas td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+}
+/* ==========================================
+   COMPETICIONES EUROPEAS EN CELULARES
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    #contenedor-competiciones {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tarjeta-competicion {
+        min-height: 280px;
+        padding: 25px 18px;
+    }
+
+    .tarjeta-competicion img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .tarjeta-competicion h3 {
+        font-size: 20px;
+    }
+
+    .tarjeta-competicion p {
+        font-size: 14px;
+    }
+
+}
+/* ==========================================
+   ACCESOS PRINCIPALES EN CELULARES
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .contenedor-accesos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tarjeta-acceso {
+        min-height: 170px;
+        padding: 25px 18px;
+    }
+
+    .tarjeta-acceso h3 {
+        font-size: 20px;
+    }
+
+    .tarjeta-acceso p {
+        font-size: 15px;
+    }
+
 }
