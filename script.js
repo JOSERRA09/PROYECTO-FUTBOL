@@ -663,7 +663,7 @@ const competiciones = [
     nombre: "UEFA Champions League",
     temporada: "2025-2026",
     equipos: 36,
-    logo: "LOGOS/LOGO UCL.png",
+    logo: "LOGOS COMPETICIONES EUROPEAS/LOGO UCL.png",
     descripcion:
         "Principal competición europea de clubes organizada por la UEFA.",
     formato:
@@ -674,7 +674,7 @@ const competiciones = [
     nombre: "UEFA Europa League",
     temporada: "2025-2026",
     equipos: 36,
-    logo: "LOGOS/LOGO UEL.jpg",
+    logo: "LOGOS COMPETICIONES EUROPEAS/LOGO UEL.jpg",
     descripcion:
         "Competición europea de clubes que reúne equipos de diferentes ligas nacionales.",
     formato:
@@ -685,7 +685,7 @@ const competiciones = [
     nombre: "UEFA Conference League",
     temporada: "2025-2026",
     equipos: 36,
-    logo: "LOGOS/LOGO CL.png",
+    logo: "LOGOS COMPETICIONES EUROPEAS/LOGO CL.png",
     descripcion:
         "Competición europea de clubes que ofrece participación internacional a equipos de distintas ligas.",
     formato:
@@ -712,6 +712,10 @@ competiciones.forEach(function(competicion) {
 
         <div class="tarjeta-competicion">
 
+            <img
+            src="${competicion.logo}"
+            alt="Logo ${competicion.nombre}"
+        >
             <h3>
                 ${competicion.nombre}
             </h3>

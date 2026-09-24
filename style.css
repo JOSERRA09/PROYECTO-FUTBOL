@@ -530,37 +530,47 @@ margin-top: 35px;
 /* TARJETAS */
 
 .tarjeta-competicion {
-background-color: #111c3a;
-border-radius: 12px;
-padding: 30px 20px;
-min-height: 220px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-transition: transform 0.3s, background-color 0.3s;
+    background-color: #111c3a;
+    border-radius: 12px;
+    padding: 20px 15px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 .tarjeta-competicion:hover {
-transform: translateY(-8px);
-background-color: #172653;
+    transform: translateY(-8px);
+    background-color: #172653;
+}
+
+.tarjeta-competicion img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 12px auto;
+    border-radius: 8px;
 }
 
 .tarjeta-competicion h3 {
-color: white;
-font-size: 23px;
-margin-bottom: 18px;
+    color: white;
+    font-size: 21px;
+    margin: 8px 0 12px 0;
 }
 
 .tarjeta-competicion p {
-color: #b8c1ec;
-font-size: 16px;
-margin: 8px 0;
-line-height: 1.5;
+    color: #b8c1ec;
+    font-size: 15px;
+    margin: 5px 0;
+    line-height: 1.4;
 }
 
 .tarjeta-competicion .formato-competicion {
-color: #00ff88;
-font-weight: bold;
+    color: #00ff88;
+    font-weight: bold;
 }
 
 /* PANTALLAS PEQUEÑAS */
